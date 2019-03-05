@@ -1,4 +1,25 @@
 {{!-- The following component displays Ember's default welcome message. --}}
+{{#labs-ui/site-header
+  responsiveNav=true
+  responsiveSize='medium'
+  as |banner|
+}}
+  {{#banner.title}}
+    <a class='site-title'>App Name <small class="site-subtitle show-for-medium">Subtitle</small></a>
+  {{/banner.title}}
+  {{#banner.nav}}
+    <ul class="menu vertical medium-horizontal">
+
+      {{#if auth.user}}
+        <a class="navbar-item">{{ auth.user.name }}</a>
+
+        <button {{action "logout"}}>Log Out</button>
+      {{ else }}
+        <button {{action "login"}}>Log In</button>
+      {{/if}}
+    </ul>
+  {{/banner.nav}}
+{{/labs-ui/site-header}}
 {{welcome-page}}
 {{!-- Feel free to remove this! --}}
 

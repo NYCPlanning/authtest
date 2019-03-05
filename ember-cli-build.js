@@ -5,7 +5,12 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
+    'ember-cli-foundation-6-sass': {
+      'foundationJs': 'all'
+    }
   });
+
+  app.import('node_modules/auth0-js/build/auth0.js');
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
