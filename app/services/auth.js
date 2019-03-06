@@ -11,7 +11,7 @@ export default Service.extend({
       // setting up the config file will be covered below
       domain: 'dcpauthtest.auth0.com', // domain from auth0
       clientID: 'xEcYzOYUxqai8q1svijnvPZR1gL9Sw3k', // clientId from auth0
-      redirectUri: 'http://authtest1.planninglabs.nyc/callback',
+      redirectUri: 'http://localhost:4200/callback',
       audience: 'https://dcpauthtest.auth0.com/userinfo',
       responseType: 'token',
       scope: 'openid profile' // adding profile because we want username, given_name, etc
@@ -81,7 +81,7 @@ export default Service.extend({
   logout() {
     this.get('auth0').logout({
       clientID: 'xEcYzOYUxqai8q1svijnvPZR1gL9Sw3k',
-      returnTo: 'http://authtest1.planninglabs.nyc'
+      returnTo: 'http://localhost:4200/'
     });
   }
 });
